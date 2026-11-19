@@ -14,21 +14,8 @@ a.btn { display: block; margin: 14px 0; padding: 22px 4px; text-align: center; f
 </head>
 <body>
 <h1>Mill</h1>
-<div id="st">Checking the laptop...</div>
-<a class="btn" id="go" href="https://invisible-romance-after-fishing.trycloudflare.com/">Open the book</a>
+<div id="st">The laptop is off right now.</div>
 <a class="btn" href="#" onclick="window.location.href = '?r=' + new Date().getTime(); return false;">Reload</a>
-<!-- LAPTOP-ON -->
-<script type="text/javascript">
-var T = "https://invisible-romance-after-fishing.trycloudflare.com/";
-var st = document.getElementById("st");
-var gone = false;
-function say(m) { if (st) { st.innerHTML = m; } }
-function openIt() { if (!gone) { gone = true; say("Laptop is on. Opening..."); window.location.href = T; } }
-var img = new Image();
-img.onload = openIt;
-img.onerror = function () { say("Can't reach the laptop. It may be off or asleep, or this page is out of date. Tap Reload. If it keeps failing, tap Open the book to see the browser's error."); };
-window.setTimeout(function () { if (!gone) { say("No answer from the laptop yet. Tap Reload, or Open the book."); } }, 10000);
-img.src = T + "_probe.gif?" + new Date().getTime();
-</script>
+<!-- LAPTOP-OFF -->
 </body>
 </html>
